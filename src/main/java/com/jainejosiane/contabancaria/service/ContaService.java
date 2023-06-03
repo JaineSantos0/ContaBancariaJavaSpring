@@ -43,7 +43,9 @@ public class ContaService {
     }
 
     public Conta putConta(Conta conta) {
-        getContaById(conta.getId());
+        Conta contaById = getContaById(conta.getId());
+
+        contaById.setSaldo(conta.getSaldo());
         return contaRepository.save(conta);
     }
 
